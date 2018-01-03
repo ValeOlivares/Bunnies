@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boonies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href=".\assets\font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href=".\assets\css\main.css">
+  </head>
+  <body>
+    <!-- nav -->
+    <nav class=" navbar navbar-default navbar-static-top nav-color">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+          <!-- <img alt="Brand" class="bunny-img" src="assets/images/26062-200.png">--></a>
+        </div>
+        <form class="navbar-form navbar-left search" role="search">
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Buscar">
+        </div>
+        <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><span class="fa fa-user-circle-o fa-2x right-icon" aria-hidden="true"></span></li>
+          <li><span class="fa fa-plus fa-2x right-icon" aria-hidden="true"></span></li>
+          <li><span class="fa fa-inbox fa-2x right-icon" aria-hidden="true"></span></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- profile -->
+    <section class="container Profile">
+    <!-- INFO PROFILE -->
+      <div class="row container ">
+        <div class="container col-lg-7 col-md-7 col-sm-7 col-xs-7">
+          <div class="row container ">
+            <div class="info-me col-xs-10 col-sm-10">
+              <h2>Juana Zapata</h2>
+              <h4>Acerca de mi</h4>
+              <p>"Me encanta el maquillaje y las cosas hechas en casa"</p>
+            </div>
+          </div>
+        </div>
+        <div class="img-profile container col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <img src="assets\images\índice.jpg" alt="">
+        </div>
+      </div>
+
+      <!-- Crear post -->
+      <div class="row container">
+        <div class=" col-lg-12 col-md-12 col-xs-12 col-sm-12">
+          <button class="btn btn-default btn-lg " type="button" data-toggle="modal" data-target="#newPost" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span> Nueva recomendación</button>
+        </div>
+      </div>
+      <!-- inicio modal post nuevo  -->
+      <div class="modal fade" id="newPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form action="javascript:newPost()" method="post">
+                <label for="basic-url">Título de tu recomendación</label>
+                <div class="input-group col-md-12">
+                  <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-paw" aria-hidden="true"></i></span>
+                  <input id="newTitle" type="text" class="form-control" placeholder="algo hermoso cruelty free" aria-describedby="sizing-addon2">
+                </div>
+                <label for="basic-url">Url de la imagen de tu recomendación</label>
+                <div class="input-group col-md-12">
+                  <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-paw" aria-hidden="true"></i></span>
+                  <input id="newImg"type="text" class="form-control" placeholder="www.miimagencf.com" aria-describedby="sizing-addon2">
+                </div>
+                <div class="form-group">
+                  <label for="comment">Opinion:</label>
+                  <textarea class="form-control" rows="5" id="newOpinion" placeholder="Ingresa tu opinión del producto, mejor manera de uso, recomendacion, etc..."></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-default btn-enviar  col-md-12">Crear</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fin del modal new post -->
+      <div class="row">
+        <div id="my-opinion" class="col-lg-12 col-md-12 col-xs-12 col-sm-12"></div>
+
+      </div>
+
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src=".\assets\js\newpost.js"></script>
+  </body>
+</html>
