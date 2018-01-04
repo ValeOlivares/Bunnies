@@ -1,4 +1,3 @@
-$(document).ready(function () {
   // Mostrar el contador de mensajes 
   $('#noti_Counter')
   .css({ opacity: 0 })
@@ -27,9 +26,7 @@ $(document).ready(function () {
 });
   $('#notifications').click(function () {
     return false; // no hacer nada si se hace click dentro de la pantalla de mensajes.
-        });
-    });
-
+        }); 
 //Area para comentar un post ya realizado
 $(function () {
   $('.panel-google-plus > .panel-footer > .input-placeholder, .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > button[type="reset"]').on('click', function(event) {
@@ -50,3 +47,66 @@ $(function () {
     }
   });
 });
+
+(function () {
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDGcXZzGc8ZHIuV7Ulf3PG-QG8zU0zntdc",
+    authDomain: "login-54f11.firebaseapp.com",
+    databaseURL: "https://login-54f11.firebaseio.com",
+    projectId: "login-54f11",
+    storageBucket: "login-54f11.appspot.com",
+    messagingSenderId: "75182368334"
+  };
+
+  firebase.initializeApp(config);
+
+
+const txtEmail = document.getElementById('txtEmail');
+const txtpassword = document.getElementById('txtpassword');
+const btnLogin = document.getElementById('btnLogin');
+const btnSignUp = document.getElementById('btnSignUp');
+const btnLogout = document.getElementById('btnLogout');
+
+//añadir Evento Login
+btnLogin.addEventListener('click' , e => {
+ //obtener email y pass
+ const email = txtEmail.value;
+ const pass = txtpassword.value;
+ const auth = firebase.auth();
+ //Sign in
+ const promise = auth.signInWithEmailAndPassword(email , pass);
+ promise.catch(e => console.log(e.message));
+
+});
+
+//sign up
+btnSignUp.addEventListener('click' , e => {
+ //obtener email y pass
+ const email = txtEmail.value;
+ const pass = txtpassword.value;
+ const auth = firebase.auth();
+ //Sign in
+ const promise = auth.createUserWithEmailAndPassword(email , pass);
+ promise.catch(e => console.log(e.message));
+});
+
+//desloguearse
+btnLogout.addEventListener('click' , e => {
+  firebase.auth().signOut();
+});
+
+//añadir un listener en tiempo real
+firebase.auth().onAuthStateChanged (firebaseUser=> {
+  if(firebaseUser) {
+    console.log(firebaseUser);
+    btnLogout.classList.remove('hide');
+  } else {
+    console.log('no logeado');
+    btnLogout.classList.add('hide');
+  }
+});
+
+
+
+} ());
