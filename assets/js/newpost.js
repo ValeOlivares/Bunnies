@@ -7,6 +7,7 @@ function newPost(){
   var urlImg = $('#imgUrl').val(); //variable para rescatar la url de la imagen  ingresada por el usuario
   var opinion = $('#newOpinion').val(); //variable para rescatar la opinion del usuario
   //creando el contenedor de mi nuevo post
+  var date = new Date ;
   $('#my-opinion').append("<div id='post_" + idPost + "' class='post col-xs-12 col-sm-offset-1 col-sm-5'>" +
 
     "<div class='panel panel-default  panel-google-plus'>" +
@@ -23,7 +24,7 @@ function newPost(){
     "<div class='panel-heading'>" +
     "<img class='logo' src='assets/images/bunny.jpg'>" +
     "<h3>Bunnie!</h3>" +
-    "<h5><span>3h</span> </h5> " +
+    "<h5><span>"+ date +"</span></h5> " +
     "</div>" + //cierre panel heading
     "<div><h3 class='panel-title'><strong>" + title + "</strong></h3>" +
     "</div>" + //cierre panel title
@@ -40,13 +41,7 @@ function newPost(){
     "</button>" +
     "<div class='input-placeholder'>Add a comment...</div>" +
     "</div>" + //cierre panel footer
-    "<div class='panel-google-plus-comment'>" +
-    "<img class='img-circle' src'https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46' alt='User Image' />" +
-    "<div class='panel-google-plus-textarea'>" +
-    "<textarea rows='4'></textarea>" +
-    "<button type='submit' class='  btn btn-success disabled  '>Post comment</button>" +
-    "<button type='reset' class='btn btn-default'>Cancel</button>" +
-    "</div>" + //cierre panel-google-plus-textarea
+    
     "<div class='clearfix'></div>" +
     "</div>" + //cierre panel-google-plus-comment
 

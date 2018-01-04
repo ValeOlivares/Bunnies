@@ -7,51 +7,131 @@
     <title>Bunnies</title>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <link rel="shortcut icon" href="assets/images/26062-200.png">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href=".\assets\font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href=".\assets\css\font-awesome-4.7.0\css\font-awesome.min.css">
     <link rel="stylesheet" href=".\assets\css\main.css">
   </head>
   <body>
     <!-- nav -->
-    <nav class=" navbar navbar-default navbar-static-top nav-color">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-          <!-- <img alt="Brand" class="bunny-img" src="assets/images/26062-200.png">--></a>
-        </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li id="noti_Container">
+              <div id="noti_Counter"></div>   <!--Contador de mensajes.-->
+              <!--Icono del dropdown-->
+              <div id="noti_Button"><span class="fa fa-inbox fa-2x right-icon" aria-hidden="true"></span></div><!--Caja con los mensajes-->
+              <div id="notifications">
+                <h3>Mensajes</h3>
+                <div style="height:300px;">
+                  <div class="col-md-12 ctc tab"> <!-- Primer Contacto -->
+                    <div class="row">
+                      <div class="col-md-1"><!--foto perfil ctc -->
+                        <img class="logo" src="assets/images/bunny.jpg" alt="">
+                      </div>
+                      <div class="col-md-9 col-md-offset-1">
+                        <h4>Nombre de usuario</h4> <!--Ctc-->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 ctc tab"> <!-- Segundo Contacto -->
+                    <div class="row">
+                      <div class="col-md-1"><!--foto perfil ctc -->
+                        <img class="logo" src="assets/images/bunny.jpg" alt="">
+                      </div>
+                      <div class="col-md-9 col-md-offset-1">
+                        <h4>Nombre de usuario</h4> <!--Ctc-->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 ctc tab"> <!-- Tercer Contacto -->
+                    <div class="row">
+                      <div class="col-md-1"><!--foto perfil ctc -->
+                        <img class="logo" src="assets/images/bunny.jpg" alt="">
+                      </div>
+                      <div class="col-md-9 col-md-offset-1">
+                        <h4>Nombre de usuario</h4> <!--Ctc-->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 ctc tab"> <!-- Cuarto Contacto -->
+                    <div class="row">
+                      <div class="col-md-1"><!--foto perfil ctc -->
+                        <img class="logo" src="assets/images/bunny.jpg" alt="">
+                      </div>
+                      <div class="col-md-9 col-md-offset-1">
+                        <h4>Nombre de usuario</h4> <!--Ctc-->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 ctc tab"> <!-- Quinto Contacto -->
+                    <div class="row">
+                      <div class="col-md-1"><!--foto perfil ctc -->
+                        <img class="logo" src="assets/images/bunny.jpg" alt="">
+                      </div>
+                      <div class="col-md-9 col-md-offset-1">
+                        <h4>Nombre de usuario</h4> <!--Ctc-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="seeAll"><a href="#">Ver todos</a></div>
+              </div>
+            </li>
+            <li><span class="fa fa-user-circle-o fa-2x right-icon" aria-hidden="true" onclick="location.href='Profile.html'"></span></li>
+            <li><span class="fa fa-plus fa-2x right-icon" aria-hidden="true"></span></li>
+          </ul>
         <form class="navbar-form navbar-left search" role="search">
-        <div class="form-group">
-        <input type="text" class="form-control" placeholder="Buscar">
-        </div>
-        <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Buscar">
+          </div>
+          <button type="submit" class="btn btn-default "><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><span class="fa fa-user-circle-o fa-2x right-icon" aria-hidden="true"></span></li>
-          <li><span class="fa fa-plus fa-2x right-icon" aria-hidden="true"></span></li>
-          <li><span class="fa fa-inbox fa-2x right-icon" aria-hidden="true"></span></li>
+          <li><a href="#" data-toggle="modal" data-target="#myModal" >Log out</a></li>
+          <li><button id="btnLogout" class="btn btn-action hide">Salir</button></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Configuración <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">General</a></li>
+              <li><a href="#">Privacidad</a></li>
+              <li><a href="#">Idioma</a></li>
+            </ul>
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+
     <!-- profile -->
     <section class="container Profile">
     <!-- INFO PROFILE -->
-      <div class="row container ">
-        <div class="container col-lg-7 col-md-7 col-sm-7 col-xs-7">
-          <div class="row container ">
-            <div class="info-me col-xs-10 col-sm-10">
-              <h2>Juana Zapata</h2>
-              <h4>Acerca de mi</h4>
-              <p>"Me encanta el maquillaje y las cosas hechas en casa"</p>
-            </div>
-          </div>
-        </div>
-        <div class="img-profile container col-lg-5 col-md-5 col-sm-5 col-xs-5">
-          <img src="assets\images\índice.jpg" alt="">
+    <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+      <div class="row panel">
+    		<div class="col-md-4 bg_blur ">
+        	<a href="#" class="follow_btn hidden-xs">Follow</a>
+    		</div>
+        <div class="col-md-8  col-xs-12">
+          <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img-thumbnail picture hidden-xs" />
+          <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img-thumbnail visible-xs picture_mob" />
+            <div class="header">
+              <h1>Lorem Ipsum</h1>
+              <h4>Web Developer</h4>
+              <span>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."There is no onewho loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</span>
+           </div>
         </div>
       </div>
+      <div class="row nav">
+        <div class="col-md-4"></div>
+        <div class=" footer-info-profile col-md-8 col-xs-12" >
+          <div class="col-md-4 col-xs-4 well"><i class="fa fa-heart-o fa-lg"></i> 14</div>
+          <div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
+          <div class="col-md-4 col-xs-4 well"><i class="fa fa-thumbs-o-up fa-lg"></i> 26</div>
+        </div>
+      </div>
+    </div>
 
       <!-- Crear post -->
       <div class="row container">
@@ -68,12 +148,12 @@
                 <label for="basic-url">Título de tu recomendación</label>
                 <div class="input-group col-md-12">
                   <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-paw" aria-hidden="true"></i></span>
-                  <input id="newTitle" type="text" class="form-control" placeholder="algo hermoso cruelty free" aria-describedby="sizing-addon2">
+                  <input id="newTitle" type="text" class="form-control" placeholder="algo hermoso cruelty free a compartir" aria-describedby="sizing-addon2">
                 </div>
                 <label for="basic-url">Url de la imagen de tu recomendación</label>
                 <div class="input-group col-md-12">
                   <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-paw" aria-hidden="true"></i></span>
-                  <input id="imgUrl" type="text" class="form-control" placeholder="www.miimagencf.com" aria-describedby="url">
+                  <input id="imgUrl" type="text" class="form-control" placeholder="link de la imagen a compartir" aria-describedby="url">
                 </div>
                 <div class="form-group">
                   <label for="comment">Opinion:</label>
@@ -98,5 +178,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src=".\assets\js\newpost.js"></script>
+    <script type="text/javascript" src=".\assets\js\app.js"></script>
+
   </body>
 </html>
