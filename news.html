@@ -78,8 +78,38 @@
             </div>
           </li>
           <li><span class="fa fa-user-circle-o fa-2x right-icon" aria-hidden="true" onclick="location.href='Profile.html'"></span></li>
-          <li><span class="fa fa-plus fa-2x right-icon" aria-hidden="true"></span></li>
+          <li><span data-toggle="modal" data-target="#newPost" class="fa fa-plus fa-2x right-icon" aria-hidden="true"></span></li>
         </ul>
+        <!-- inicio modal post nuevo  -->
+        <div class="modal fade" id="newPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <form action="javascript:newPost()" method="post">
+                  <label for="basic-url">Título de tu recomendación</label>
+                  <div class="input-group col-md-12">
+                    <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-paw" aria-hidden="true"></i></span>
+                    <input id="newTitle" type="text" class="form-control" placeholder="algo hermoso cruelty free a compartir" aria-describedby="sizing-addon2">
+                  </div>
+                  <label for="basic-url">Url de la imagen de tu recomendación</label>
+                  <div class="input-group col-md-12">
+                    <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-paw" aria-hidden="true"></i></span>
+                    <input id="imgUrl" type="text" class="form-control" placeholder="link de la imagen a compartir" aria-describedby="url">
+                  </div>
+                  <div class="form-group">
+                    <label for="comment">Opinion:</label>
+                    <textarea class="form-control" rows="5" id="newOpinion" placeholder="Ingresa tu opinión del producto, mejor manera de uso, recomendacion, etc..."></textarea>
+                  </div>
+                  <div class=" text-center modal-footer">
+                    <button type="submit" class="btn btn-default btn-crear  col-md-5" >Crear</button>
+                    <button data-dismiss="modal" type="submit" class="btn btn-default btn-crear  col-md-5" >Cerrar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fin del modal new post -->
       <form class="navbar-form navbar-left search" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Buscar">
@@ -158,71 +188,81 @@
           </ul>
         </div>
         <div class="panel-heading">
-          <img class="logo" src="assets/images/bunny.jpg">
-          <h3>Bunnie!</h3>
-          <h5><span>3h</span> </h5>
-                </div>
-                <div class="panel-body">
-                    <p>Acá un post de gente que recomienda algún producto</p>
-                </div>
-                <div class="panel-footer">
-                    <button type="button" class="btn btn-default"><span class="fa fa-paw"></span></button>
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-share-alt"></span>
-                    </button>
-                    <div class="input-placeholder">Escribe un comentario ... </div>
-                </div>
-                <div class="panel-google-plus-comment">
-                    <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" />
-
-                    <div class="panel-google-plus-textarea">
-                        <textarea rows="4"></textarea>
-                        <button type="submit" class="btn btn-success disabled">Enviar</button>
-                        <button type="reset" class="btn btn-default">Cancelar</button>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
+          <img class="logo" src="assets/images/logo-wander.jpg">
+          <h3>Wanderlust</h3>
+          <h5><span>Fri Jan 05 2018 14:12:06 GMT-0300 (Hora verano Sudamérica Pacífico)</span> </h5>
         </div>
-        <div class="col-xs-12 col-sm-5">
-            <div class="panel panel-default panel-google-plus">
-                <div class="dropdown">
-                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
-                        <span class="fa fa-bars"></span>
-                    </span>
-                    <ul class="dropdown-menu" role="menu">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Compartir</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Borrar</a></li>
-                    </ul>
-                </div>
-                <div class="panel-heading">
-                    <img class="logo" src="assets/images/bunny.jpg">
-                    <h3>Bunnie!</h3>
-                    <h5><span>2h</span> </h5>
-                </div>
-                <div class="panel-body">
-                    <p>Acá un post de gente que recomienda algún producto</p>
-                </div>
-                <div class="panel-footer">
-                    <button type="button" class="btn btn-default"><span class="fa fa-paw"></button>
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-share-alt"></span>
-                    </button>
-                    <div class="input-placeholder">Add a comment...</div>
-                </div>
-                <div class="panel-google-plus-comment">
-                    <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" />
-                    <div class="panel-google-plus-textarea">
-                        <textarea rows="4"></textarea>
-                        <button type="submit" class="btn btn-success disabled">Post comment</button>
-                        <button type="reset" class="btn btn-default">Cancel</button>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
+        <div class='panel-title'><h3 ><strong>Jabón de cerveza</strong></h3></div>
+        <div class = 'panel-body'>
+          <a href='#' class='thumbnail'>
+          <img src="https://scontent.fscl8-1.fna.fbcdn.net/v/t1.0-9/26230524_1167076406761482_1126796183654029900_n.jpg?oh=9465b4bb6d408b40b3f130de55229413&oe=5AF9C32E" alt='...'></a>
+        <div class ='panel-opinion'> Este jabón de cerveza es uno de nuestros favoritos por sus propiedades cosméticas. Tiene vitamina B, que ayuda a nutrir y combatir la sequedad de la piel. Ademas la cerveza aporta propiedades antibacterianas, desinfectates y antisepticas, lo que mejora los síntomas de las pieles con acné o sirve para lavar la piel luego del afeitado.</div>
         </div>
+        <div class="panel-footer">
+          <button type="button" class="btn btn-default niceButt "><span class="fa fa-paw"></span></button>
+          <button type="button" class="btn btn-default niceButt">
+            <span class="glyphicon glyphicon-share-alt"></span>
+          </button>
+          <div class="input-placeholder">Escribe un comentario ... </div>
+        </div>
+        <div class="panel-google-plus-comment">
+          <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image">
+          <div class="panel-google-plus-textarea">
+            <textarea rows="4"></textarea>
+            <button type="submit" class="btn btn-success disabled">Enviar</button>
+            <button type="reset" class="btn btn-default">Cancelar</button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5">
+      <div class="panel panel-default panel-google-plus">
+        <div class="dropdown">
+          <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+            <span class="fa fa-bars"></span>
+          </span>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Compartir</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Eliminar</a></li>
+          </ul>
+        </div>
+        <div class="panel-heading">
+          <img class="logo" src="assets/images/emperifollada.jpg">
+          <h3>La emperifollada</h3>
+          <h5><span>Fri Jan 05 2018 14:12:06 GMT-0300 (Hora verano Sudamérica Pacífico)</span> </h5>
+        </div>
+        <div class='panel-title'><h3 ><strong>Labiales Gems Citycolor</strong></h3></div>
+        <div class = 'panel-body'>
+          <a href='#' class='thumbnail'>
+          <img src="https://scontent.fscl8-1.fna.fbcdn.net/v/t1.0-9/20431332_789664487878911_1005424450398049947_n.jpg?oh=f9e2c18408a5445bee1f3de72c4ebb95&oe=5AF14B11" alt='...'></a>
+        <div class ='panel-opinion'>👄👄City Color Gems, MUY pigmentados y larga duración!Te encanta crear efectos y tus propios colores?Este labial es perfecto para eso!</div>
+        </div>
+        <div class="panel-footer">
+          <button type="button" class="btn btn-default niceButt"><span class="fa fa-paw"></span></button>
+          <button type="button" class="btn btn-default niceButt">
+            <span class="glyphicon glyphicon-share-alt"></span>
+          </button>
+          <div class="input-placeholder">Escribe un comentario ... </div>
+        </div>
+        <div class="panel-google-plus-comment">
+          <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image">
+          <div class="panel-google-plus-textarea">
+            <textarea rows="4"></textarea>
+            <button type="submit" class="btn btn-success disabled ">Enviar</button>
+            <button type="reset" class="btn btn-default">Cancelar</button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="my-opinion" class="col-lg-12 col-md-12 col-xs-12 col-sm-12"></div>
+
+    </div>
+  </div>
+
 </div>
  <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"

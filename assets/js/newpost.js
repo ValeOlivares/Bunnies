@@ -26,7 +26,7 @@ function newPost(){
     "<h3>Bunnie!</h3>" +
     "<h5><span>"+ date +"</span></h5> " +
     "</div>" + //cierre panel heading
-    "<div><h3 class='panel-title'><strong>" + title + "</strong></h3>" +
+    "<div class='panel-title'><h3><strong>" + title + "</strong></h3>" +
     "</div>" + //cierre panel title
     "<div class = 'panel-body'>" +
     "<a href='#' class='thumbnail'>" +

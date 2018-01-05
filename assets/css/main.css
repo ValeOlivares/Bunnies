@@ -3,6 +3,9 @@
 	font-family: 'Open Sans', sans-serif;
 	color: black;
 }
+.navbar{
+	background-color: #b7cbbf;
+}
 
 .well {
   margin-top:-20px;
@@ -26,20 +29,25 @@
   border-radius: 0px !important;
   border-bottom : 2px solid rgba(97, 203, 255, 0.65);
 }
+.niceButt{
+	background-color: #f9a799;
 
+}
 body {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 font-size: 14px;
 line-height: 1.42857143;
 color: #fff;
-background-color: #F1F1F1;
+background-color: #fdedec;
 }
 .bg_blur {
   /*background-image:url('https://www.solofondos.com/wp-content/uploads/2015/11/Im%C3%A1genes-de-fondo.jpg');*/
   height: 300px;
   background-size: cover;
 }
-
+h3{
+	margin-left: 0.7em;
+}
 .follow_btn {
   text-decoration: none;
   position: absolute;
