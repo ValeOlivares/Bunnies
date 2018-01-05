@@ -41,23 +41,10 @@ function newPost(){
     "</button>" +
     "<div class='input-placeholder'>Add a comment...</div>" +
     "</div>" + //cierre panel footer
-    
     "<div class='clearfix'></div>" +
     "</div>" + //cierre panel-google-plus-comment
-
-
-
     "</div>" + //panel panel-default
     "</div>" //cierre post_
-
-
-    /*"<ul class='dropdown-menu' role='menu'>" +
-    "<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Compartir</a></li>" +
-    "<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Editar</a></li>" +
-    "<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Eliminar</a></li>" +
-    "</ul>" +*/
-
-
 
   );
 

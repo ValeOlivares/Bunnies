@@ -1,10 +1,13 @@
-  // Mostrar el contador de mensajes 
+$(document).ready(function () {
+
+})
+  // Mostrar el contador de mensajes
   $('#noti_Counter')
   .css({ opacity: 0 })
   .text('7') // valor que se muestra en pantalla, después cambiar a un valor dinamico
   .css({ top: '-10px' })
   .animate({ top: '-2px', opacity: 1 }, 500);
-  
+
   $('#noti_Button').click(function () {
     // Mostrar o ocultar pantalla despegagle
     $('#notifications').fadeToggle('fast', 'linear', function () {
@@ -26,7 +29,7 @@
 });
   $('#notifications').click(function () {
     return false; // no hacer nada si se hace click dentro de la pantalla de mensajes.
-        }); 
+        });
 //Area para comentar un post ya realizado
 $(function () {
   $('.panel-google-plus > .panel-footer > .input-placeholder, .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > button[type="reset"]').on('click', function(event) {
@@ -48,7 +51,7 @@ $(function () {
   });
 });
 
-(function () {
+/*(function () {
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDGcXZzGc8ZHIuV7Ulf3PG-QG8zU0zntdc",
@@ -60,6 +63,7 @@ $(function () {
   };
 
   firebase.initializeApp(config);
+
 
 
 const txtEmail = document.getElementById('txtEmail');
@@ -109,4 +113,4 @@ firebase.auth().onAuthStateChanged (firebaseUser=> {
 
 
 
-} ());
+} ()); */
